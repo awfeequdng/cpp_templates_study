@@ -22,10 +22,17 @@ void show(T t, Args... args) {
     }
 }
 
+template <class... Args>
+void display(Args... args) {
+    ((cout << args << " "), ...);
+    cout << endl;
+}
+
 int main() {
 
     print(3, 3.1, "hello wolrd");
     show(3, 3.11, "hello wolrd");
+    display(32, 3.111, "hello2 wolrd");
 
     return 0;
 }
